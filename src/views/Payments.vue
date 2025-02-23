@@ -1,9 +1,8 @@
 <template>
-  <Navbar/>
+  <Navbar />
   <div class="container mt-4">
     <h2 class="text-center mb-4">Payment Management</h2>
 
-    <!-- Add Payment Button -->
     <div
       class="d-flex flex-column justify-content-around w-25 align-items-stretch ms-auto mb-2"
     >
@@ -12,7 +11,6 @@
       </button>
     </div>
 
-    <!-- Payment Table -->
     <div class="table-responsive">
       <table class="table table-bordered table-striped">
         <thead class="table-primary">
@@ -148,7 +146,7 @@ export default {
     return {
       payments: [],
       students: [],
-      studentCourses: [], // ✅ Store courses for selected student
+      studentCourses: [],
       paymentData: {
         student_id: "",
         course_id: "",
@@ -180,7 +178,6 @@ export default {
       }
     },
 
-    // ✅ Fetch Remaining Fee & Courses for Selected Student
     async fetchRemainingFee() {
       if (!this.paymentData.student_id) return;
       try {
@@ -188,7 +185,7 @@ export default {
           `/students/${this.paymentData.student_id}`
         );
         this.remainingFee = response.data.remaining_fee;
-        this.studentCourses = response.data.courses; // ✅ Set only selected student's courses
+        this.studentCourses = response.data.courses;
       } catch (error) {
         console.error("Error fetching remaining fee and courses:", error);
       }
