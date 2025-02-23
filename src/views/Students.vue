@@ -9,6 +9,7 @@
         + Add Student
       </button>
 
+      <!-- Filter Pending Balances -->
       <label>
         <input
           type="checkbox"
@@ -18,9 +19,11 @@
         Show only students with pending balances
       </label>
 
+      <!-- Export Button -->
       <button @click="exportToCSV">Export as CSV</button>
     </div>
 
+    <!-- Student List Table -->
     <div class="table-responsive">
       <table class="table table-bordered table-striped">
         <thead class="table-primary">

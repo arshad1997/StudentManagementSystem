@@ -59,6 +59,7 @@ export default {
 </script>
 
 <style>
+/* Add some custom styling */
 .card {
   border-radius: 12px;
 }
